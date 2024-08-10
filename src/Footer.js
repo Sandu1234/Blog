@@ -20,9 +20,18 @@ function Footer() {
         marginBottom: '40px',
       }}
     >
-      <Typography variant="h4" align="center" gutterBottom>
-        Let’s get started on something great
-      </Typography>
+      <Typography
+  variant="h4"
+  align="center"
+  gutterBottom
+  sx={{
+    fontSize: { xs: '0.8rem', sm: '2rem', md: '2.5rem' }, // Responsive font sizes
+    padding: { xs: '10px', sm: '20px' }, // Adjust padding if needed
+  }}
+>
+  Let’s get started on something great
+</Typography>
+
       <Box sx={{ textAlign: 'center', marginBottom: '40px' }}>
       </Box>
 

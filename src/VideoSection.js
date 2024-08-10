@@ -17,11 +17,11 @@ function ImageSection() {
         marginRight: "40px", // Add space on the right
         marginBottom: "40px", // Add space at the bottom
         borderRadius: "10px", // Optional: Rounded corners for the section
-        height: "500px", // Adjust the height as needed
+        height: { xs: "500px", md: "500px" }, // Set a fixed height
         overflow: "hidden", // Ensure the squares don't overflow
       }}
     >
-      {/* Light Green Overlay */}
+      {/* Dark Overlay */}
       <Box
         sx={{
           position: "absolute",
@@ -29,66 +29,81 @@ function ImageSection() {
           left: 0,
           width: "100%",
           height: "100%",
-          backgroundColor: "rgba(20, 20, 20, 0.6)", // Light green overlay with transparency
+          backgroundColor: "rgba(20, 20, 20, 0.6)", // Dark overlay with transparency
           zIndex: 1, // Position this behind the text
         }}
       />
 
       {/* Main Title */}
-      <Typography
-        variant="h4"
+      <Box
         sx={{
           position: "absolute",
-          bottom: "100px",
-          left: "20px",
-          fontFamily: '"Playfair Display", serif',
-          fontWeight: "bold",
-          fontSize: "2.5rem", // Adjusted font size
+          bottom: { xs: "auto", md: "100px" }, // Adjust position based on screen size
+          left: { xs: "10px", md: "20px" }, // Adjust position based on screen size
+          top: { xs: "50px", md: "auto" }, // For mobile, place it towards the top
+          padding: { xs: "10px", md: 0 },
           zIndex: 2, // Ensure text is above the overlay
+          width: { xs: "calc(100% - 20px)", md: "auto" }, // Ensure it fits within the container on mobile
+          display: { xs: "none", md: "block" }, // Hide on mobile, show on tablet and web
         }}
       >
-        Inspiring Minds and Sharing Knowledge:
-      </Typography>
-
-      <Typography
-        variant="h4"
-        sx={{
-          position: "absolute",
-          bottom: "60px",
-          left: "20px",
-          fontFamily: '"Playfair Display", serif',
-          fontSize: "2.5rem", // Adjusted font size
-          zIndex: 2, // Ensure text is above the overlay
-        }}
-      >
-        Sandamini Nayanathara on Writing and Creativity
-      </Typography>
+        <Typography
+          variant="h4"
+          sx={{
+            fontFamily: '"Playfair Display", serif',
+            fontWeight: "bold",
+            fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" }, // Responsive font sizes
+            marginBottom: { xs: "10px", md: "20px" },
+          }}
+        >
+          Inspiring Minds and Sharing Knowledge:
+        </Typography>
+        <Typography
+          variant="h4"
+          sx={{
+            fontFamily: '"Playfair Display", serif',
+            fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" }, // Responsive font sizes
+          }}
+        >
+          Sandamini Nayanathara on Writing and Creativity
+        </Typography>
+      </Box>
 
       {/* Subtitle */}
       <Typography
         variant="body1"
         sx={{
           position: "absolute",
-          bottom: "10px",
-          left: "20px",
+          bottom: { xs: "auto", md: "10px" }, // Adjust position based on screen size
+          top: { xs: "auto", md: "auto" },
+          left: { xs: "10px", md: "20px" },
+          right: { xs: "10px", md: "auto" },
           fontFamily: "Roboto, Arial, sans-serif",
-          fontSize: "1rem", // Adjusted font size
+          fontSize: { xs: "0.875rem", sm: "1rem" }, // Responsive font sizes
           zIndex: 2, // Ensure text is above the overlay
+          marginBottom: { xs: "20px", md: "0" },
+          marginTop: { xs: "20px", md: "0" }, // Add margin for spacing on mobile
+          width: { xs: "calc(100% - 20px)", md: "auto" }, // Ensure it fits within the container on mobile
+          display: { xs: "none", md: "block" }, // Hide on mobile, show on tablet and web
         }}
       >
-        I'm a passionate content creator and Software Engineer from Colombo, Sri Lanka.<br></br> I have shared my insights and expertise through a diverse collection of blogs, covering topics from technology trends to personal growth. 
-        
+        I'm a passionate content creator and Software Engineer from Colombo, Sri Lanka.
+        <br />
+        I have shared my insights and expertise through a diverse collection of blogs, 
+        covering topics from technology trends to personal growth.
       </Typography>
 
       {/* Additional Info */}
       <Box
         sx={{
-          position: "absolute",
-          bottom: "10px",
-          right: "20px",
-          display: "flex",
-          gap: "20px",
+          position: { xs: "relative", md: "absolute" }, // Relative positioning on mobile for better layout
+          bottom: { xs: "auto", md: "10px" },
+          right: { xs: "auto", md: "20px" },
+          display: { xs: "none", md: "flex" }, // Hide on mobile, show on tablet and web
+          flexDirection: { xs: "column", sm: "row" }, // Stack vertically on small screens
+          gap: "10px",
           zIndex: 2, // Ensure text is above the overlay
+          marginTop: { xs: "20px", md: "0" }, // Add margin on mobile
         }}
       >
         <Box
@@ -103,7 +118,7 @@ function ImageSection() {
             variant="caption"
             sx={{
               fontFamily: "Roboto, Arial, sans-serif",
-              fontSize: "0.875rem",
+              fontSize: { xs: "0.5rem", sm: "0.875rem" }, // Responsive font sizes
               fontWeight: "bold",
             }}
           >
@@ -113,7 +128,7 @@ function ImageSection() {
             variant="body2"
             sx={{
               fontFamily: "Roboto, Arial, sans-serif",
-              fontSize: "0.875rem",
+              fontSize: { xs: "0.5rem", sm: "0.875rem" }, // Responsive font sizes
             }}
           >
             Sandamini Nayanathara
@@ -132,7 +147,7 @@ function ImageSection() {
             variant="caption"
             sx={{
               fontFamily: "Roboto, Arial, sans-serif",
-              fontSize: "0.875rem",
+              fontSize: { xs: "0.5rem", sm: "0.875rem" }, // Responsive font sizes
               fontWeight: "bold",
             }}
           >
@@ -142,7 +157,7 @@ function ImageSection() {
             variant="body2"
             sx={{
               fontFamily: "Roboto, Arial, sans-serif",
-              fontSize: "0.875rem",
+              fontSize: { xs: "0.5rem", sm: "0.875rem" }, // Responsive font sizes
             }}
           >
             12 April 2024
@@ -158,7 +173,7 @@ function ImageSection() {
           right: 0,
           width: "90px", // Adjust size based on your grid design
           height: "90px",
-          display: "grid",
+          display: { xs: "none", md: "grid" }, // Hide on mobile, show on tablet and web
           gridTemplateColumns: "repeat(3, 30px)",
           gridTemplateRows: "repeat(3, 30px)",
           zIndex: 2, // Ensure grid is above the overlay
