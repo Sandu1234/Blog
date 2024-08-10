@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, IconButton } from '@mui/material';
+import { Box, Typography, IconButton, Grid } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -14,23 +14,24 @@ function Footer() {
         position: 'relative',
         backgroundColor: '#2F2B29',
         color: '#FFFFFF',
-        padding: '40px 20px',
-        marginLeft: '40px',        // Add space on the left
-        marginRight: '40px',       // Add space on the right
-        marginBottom: '40px',       // Add space on the right
-        // borderRadius: '8px',       // Optional: Rounded corners
+        padding: { xs: '20px 10px', md: '40px 20px' },  // Responsive padding
+        marginLeft: { xs: '10px', md: '40px' },         // Responsive margins
+        marginRight: { xs: '10px', md: '40px' },
+        marginBottom: '40px',
       }}
     >
       <Typography variant="h4" align="center" gutterBottom>
         Let’s get started on something great
       </Typography>
       <Box sx={{ textAlign: 'center', marginBottom: '40px' }}>
-</Box>
+      </Box>
+
       {/* Social Media Icons */}
       <Box
         sx={{
           display: 'flex',
           justifyContent: 'center',
+          flexWrap: 'wrap',  // Allow icons to wrap on smaller screens
           marginTop: 4,
           gap: 2,
         }}
@@ -95,6 +96,7 @@ function Footer() {
           <GitHubIcon fontSize="large" />
         </IconButton>
       </Box>
+
       <Box sx={{ textAlign: 'center', marginTop: 4 }}>
         <Typography variant="caption">© 2024 Thought Nexus. All rights reserved.</Typography>
       </Box>
@@ -105,8 +107,8 @@ function Footer() {
           position: 'absolute',
           top: 0,
           right: 0,
-          width: '90px',  // Adjust this based on how wide you want the grid to be
-          height: '90px', // Adjust this based on how tall you want the grid to be
+          width: '90px',
+          height: '90px',
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 30px)',
           gridTemplateRows: 'repeat(3, 30px)',
